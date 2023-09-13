@@ -1,16 +1,20 @@
 import Card from "./../UI/Card";
+import classes from "./AddUsers.module.css";
 
 const AdddUsers = (props) => {
   return (
-    <>
-      <Card>
-        <label>Username</label>
-        <input type="string" />
-        <label>Age (Years)</label>
-        <input type="number" />
+    <Card>
+      <form className={classes.form}>
+        <div className={classes.input}>
+          <label htmlFor="username">Username</label>
+          <input type="text" />
+          <label htmlFor="age">Age (Years)</label>
+          <input type="text" />
+        </div>
+
         <button>Add Users</button>
-      </Card>
-    </>
+      </form>
+    </Card>
   );
 };
 
