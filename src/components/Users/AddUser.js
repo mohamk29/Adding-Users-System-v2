@@ -17,6 +17,11 @@ const AdddUsers = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    props.onAddUser(username, age);
+
+    setUsername("");
+    setAge("");
   };
 
   return (
@@ -24,10 +29,10 @@ const AdddUsers = (props) => {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.input}>
           <label htmlFor="username">Username</label>
-          <input type="text" onChange={usernameHandler} />
+          <input type="text" onChange={usernameHandler} value={username} />
 
           <label htmlFor="age">Age (Years)</label>
-          <input type="text" onChange={ageHandler} />
+          <input type="number" onChange={ageHandler} value={age} />
 
           <Button type="submit">Add Users</Button>
         </div>

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import AdddUsers from "./components/Users/AddUser";
 
 function App() {
+  const [userList, setUserList] = useState([]);
+
+  const addUserHandler = (username, age) => {};
   return (
     <div>
-      <AdddUsers />
+      <AdddUsers onAddUser={addUserHandler} />
     </div>
   );
 }
